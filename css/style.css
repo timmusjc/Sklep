@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+
+}
+
+.container a:hover{
+    color: rgb(255, 153, 0);
+}
+
+.home_page{
+    display: flex;
+    background-color: #f2f2f2;
+    color:rgb(0, 0, 0);
+    height: 100%;
+    width: 100%;
+    font-family: "roboto";
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+.container{
+    
+    margin-top: 20px;
+   position: relative;
+}
+
+.container p{
+    justify-self: center;
+}
+
+
+.log_page{
+    font-family: "roboto";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
+    color:rgb(255, 255, 255);
+    font-family: "roboto";
+    background-image: linear-gradient(to right, #35234b 0% 10%,#2975bf 60% 70%,#3d54b1 80% 100%);
+    background:linear-gradient(to right, #362d6f,#9f3c54);
+    overflow: hidden;
+}
+
+
+.log_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    /* margin: 20px auto; */
+    order: 2;
+    width: 38rem;
+    height: 32rem;
+    background: rgba(255,255,255,.1);
+    border-radius: 7px;
+    /* border: solid 5px rgba(0, 0, 0,.5); */
+    box-shadow: 100px 100px 100px rgb(0, 0, 0,.2);
+}
+
+
+#google_login{
+    position: relative;
+}
+.log_page input{
+    position: relative;
+    background: #ebddf0;
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+
+#pass{
+    font-size: 20px;
+}
+
+#repeat_pass{
+    font-size: 20px;
+}
+
+
+
+.log_page input::placeholder{
+    color: black;
+    opacity: 0.7;
+    font-size: 16px;
+}
+
+.log_page button{
+    position: relative;
+    font-family: "roboto";
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    background: #ebddf0;
+    cursor: pointer;
+    color: black;
+}
+.log_page h1{   
+    display: flex;
+    top: 0;
+    text-align: left;
+}
+
+.container{
+position: relative;
+width: 80%;
+background: rgb(255, 255, 255);
+}
+
+.product{
+    position: relative;
+    max-width: 250px;
+    max-height: 250px;
+   
+}
+
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 112px;
+    background: black;
+    bottom: 0;
+}
