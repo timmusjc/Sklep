@@ -22,9 +22,10 @@ if(mb_strlen($login) < 3 || mb_strlen($login) > 50) {
 }
 
 $pass = md5($pass."gjfvjhgyf576547");
+$pu = 0;
 
 $mysql = new mysqli('localhost', 'Timofey', 'Astra2007!','sklep');
-$mysql->query("INSERT INTO `users` (`login`, `pass`) VALUES('$login', '$pass')");
+$mysql->query("INSERT INTO `users` (`login`, `pass`, `pu`) VALUES('$login', '$pass', '$pu')");
 
 $mysql->close();
 

@@ -18,13 +18,15 @@ session_start();
 
     $result = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login' AND `pass` = '$pass'");
     $user = $result->fetch_assoc();
+    $pu = $mysql->query("SELECT pu FROM `users` ");
+    $pu1 = $pu->fetch_assoc();
 
     if(!$user){
         echo "Użytkownika nie znaleziono";
         exit();
     }
     $_SESSION['user']=$login;
-    $_SESSION['pu']=1;
+    $_SESSION['pu']=$pu1;
 
     $mysql->close();
 

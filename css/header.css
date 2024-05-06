@@ -5,27 +5,35 @@
     padding: 0;
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
 }
 
 .header{
+    /* overflow: hidden; */
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: 0;
+    /* position: relative; */
+    /* top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; */
     height: 56px;
     font-family: "raleway";
     background-color: black;
     color: white;
     box-shadow: 10px 0px 15px rgb(0, 0, 0,.2);
+    margin-bottom: 56px;
+    z-index: 100;
 }
 
 
 
 .icon{
-    
+    position: relative;
     text-decoration: none;
     filter: invert(1);
     width: 25px;
@@ -45,15 +53,6 @@
     height: 25px;
 }
 
-.menu{
-    /* margin: auto; */
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    align-self: center;
-}
 
 #main_icon{
     list-style: none;
@@ -62,48 +61,10 @@
     padding: 0;
 }
 
-.menu li{
-    width: 200px;
-    list-style: none;
-    background: black;
-    border: 0.5px;
-    border-radius: 2px;
-    border-style: solid;
-    color: white;
-    position: relative;
-}
-
-.menu a{
-    color: white;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    height: 40px;
-    line-height: 40px;
-    transition: all .5s;
-    padding: 0 10px;
-}
-
-.menu a:hover{
-    background: rgb(50, 49, 49);
-}
-
-.menu ul{
-    position: absolute;
-    left: -170px;
-    top: 100%;
-    display: none;
-    padding: 0;
-}
-
-.menu li:hover ul{
-    display: block;
-}
-
 .icons{
     display: flex;
     margin-left: auto;
-    width: fit-content;
+    width: 100px;
 }
 
 #login{
@@ -168,3 +129,42 @@
     justify-self: flex-end;
     
 }
+
+.dropbtn {
+    background-color: #000000;
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: #474747;}
+
+  .test{
+    color: #000000;
+  }

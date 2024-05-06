@@ -1,29 +1,15 @@
 <?php
-                    $mysql = new mysqli('localhost', 'Timofey', 'Astra2007!','sklep');
-                    $info = [];
-
-
-                   
-
-
-
-                    if($result = $mysql->query("SELECT * FROM products")){
-                        while ($row = $result->fetch_assoc()) {
-                            $info[] = $row;
-                        }
-                    } else {
-                        print_r($mysql->errorInfo());
-                    }
-
-                
-
+require_once"functions.php";
+    $products = getData($_GET["products_id"]);
+    $title = $products['firma'] . "&nbsp" . $products['model'] . "&nbsp" . $products['memory'] . "&nbsp" . $products['colour'];
 ?>
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $data['firma'];  echo $data['model']; echo $data['memory']; ?></title>
+    <title><?= $title;?></title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -32,22 +18,20 @@
 <body>
 <div class="home_page">    
 
-<div class="header">
-    <div class="logo_block">
-        <div class="logo">
-            <a href="index.php" alt="Home">
-            <img src="./images/apple.png" alt="Home" id="logo" href="index.php">
-            </a>
-        </div>
-            <div class="nazwa">
-                <a class="link" href="index.php" alt="Home">
-                <h1 class="nazwa">Jabłka in PL</h1>
-            </a>
+    <div class="header">
+        <div class="logo_block">
+            <div class="logo">
+                <a href="index.php" alt="Home">
+                <img src="./images/apple.png" alt="Home" id="logo" href="index.php">
+                </a>
             </div>
-    </div>  
+                <div class="nazwa">
+                    <a class="link" href="index.php" alt="Home">
+                    <h1 class="nazwa">Jabłka in PL</h1>
+                    </a>
+                </div>
+        </div>  
 
-
-    
         <div class="icons">  
             <a href="wyszukiwanie.php">
                 <img class="icon" src="images/search-svgrepo-com.svg" alt="polubione">
@@ -61,50 +45,50 @@
             </a>
         </div>
 
-                        <?php   
-                        session_start();
-                        echo "
-            <ul class='menu'>
-                <li id='main_icon'>
-                    <img id='konto' src='images/account-svgrepo-com.svg' alt='konto'>
-                    <ul>";
-                        if(!isset($_SESSION['user'])){
-                        echo "
-                        <li><a href='logowanie.php'>Log in</a></li>
-                        <li><a href='rejestracja.php'>Sign up</a></li>";
-                        }
+        <div class="dropdown">
+                    <button class="dropbtn">
+                        <img id="konto" src="images/account-svgrepo-com.svg" alt="konto">
+                    </button>
 
-                        else
-                            echo "<li>Witaj: ".$_SESSION['user']."</li> (<li><a href='logout.php'>Exit</a></li>)";
-                        ?>
+                  <div class="dropdown-content">
+                    <?php   
+                    session_start();
+                    if(!isset($_SESSION['user'])){
+                    echo "
+                    <a href='logowanie.php'>Log in</a>
+                    <a href='rejestracja.php'>Sign up</a>";
+                    }
+                    else
+                        
+                        echo "<div class='test'>Witaj: ".$_SESSION['user']." <a href='logout.php'>Exit</a> </div>)";
+                    ?>
 
-                    </ul>
-                </li>
-            </ul>
+                  </div>
+                 
 
         </div>
-</div>
+    </div>
 
-<div class="container">
-        <?php foreach($info as $data): ?>
+
+    <div class="main">
+
+        <div class="container">
             
-                <a href="product.php">
-                    <img class="product" src="<?php echo $data['image']; ?>">
-            <p><?= $data['firma']; echo "&nbsp";  echo $data['model']; echo "&nbsp"; echo $data['memory'];?></p>
-            <p><?= $data['price']; ?> zł</p>
-            </a>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="product" src="<?php echo $products['image']; ?>">
+                            <p><?= $products['firma']; echo "&nbsp";  echo $products['model']; echo "&nbsp"; echo $products['memory'];?></p>
+                            <p><?= $products['price']; ?> zł</p>
+                        </div> 
+                    </div>
+        </div>
+            
+    </div>
 
-        <?php endforeach; ?>
-    
-    
-</div>
+    <div class="footer">
         
 
-
-<div class="footer">
-    
-
-</div>
+    </div>
 
 </div>
 
