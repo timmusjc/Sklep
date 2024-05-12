@@ -17,61 +17,27 @@ require_once"functions.php";
 
 <div class="home_page">    
 
-    <div class="header">
-        <div class="logo_block">
-            <div class="logo">
-                <a href="index.php" alt="Home">
-                <img src="./images/apple.png" alt="Home" id="logo" href="index.php">
-                </a>
-            </div>
-                <div class="nazwa">
-                    <a class="link" href="index.php" alt="Home">
-                    <h1 class="nazwa">Jabłka in PL</h1>
-                    </a>
-                </div>
-        </div>
-
-            <div class="icons">  
-                <a href="wyszukiwanie.php">
-                    <img class="icon" src="images/search-svgrepo-com.svg" alt="polubione">
-                </a> 
-                <a href="polubione.php">
-                    <img class="icon" src="images/heart-svgrepo-com.svg" alt="polubione">
-                </a>
-
-                <a href="koszyk.php">
-                    <img class="icon" src="images/shop-bag-svgrepo-com.svg" alt="koszyk">
-                </a>
-            </div>
-            
-                <div class="dropdown">
-                    <button class="dropbtn">
-                        <img id="konto" src="images/account-svgrepo-com.svg" alt="konto">
-                    </button>
-
-                    <div class="dropdown-content">
-                        
-                        <?php   
-                        session_start();
-                        if(!isset($_SESSION['user'])){
-                        echo "
-                        <a href='logowanie.php'>Log in</a>
-                        <a href='rejestracja.php'>Sign up</a>";
-                        }
-                        elseif(isset($_SESSION['pu']) && ($_SESSION['user']) && ($_SESSION['pu']==0)){
-                            echo "<div class='test'>Witaj: ".$_SESSION['user']." <a href='logout.php'>Exit</a> </div>";
-                            }else{
-                                echo "<div class='test'>JA ADMINNN  <a href='logout.php'>Exit</a> </div>";
-                            };
-                        
-                        ?>
-                    </div>
-                </div>  
-    </div>
+<?php
+    include("header.php");
+?>
 
 
 
     <div class="main">
+
+    <?php 
+
+                        
+if(isset($_SESSION['pu']) && ($_SESSION['user']) && ($_SESSION['pu']==1)){ ?>
+    <form action="dodawanie_kategorii.php">
+    <div class="edytowac">
+                        <button class="przycisk">Dodać nową kategorię</button></div>
+    </form>
+
+<?php
+}
+?>
+
         <div class="categories">
             <h2 class="text-center">Kategorie</h2>
             <div class="row">
@@ -95,6 +61,17 @@ require_once"functions.php";
         <div class="container">
             <div class="row">
                 <?php 
+
+                        
+                if(isset($_SESSION['pu']) && ($_SESSION['user']) && ($_SESSION['pu']==1)){ ?>
+                    <form action="dodawanie_towaru.php">
+                    <div class="edytowac">
+                        <button type="submit" class="przycisk">Dodać nowy towar</button> </div>
+                    </form> 
+<?php
+                }
+?>
+<?php
                 $products = getData(null);
                 foreach($products as $data): ?>
                     <div class="col-sm-3">

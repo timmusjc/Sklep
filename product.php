@@ -17,88 +17,42 @@ require_once"functions.php";
 </head>
 <body>
 <div class="home_page">    
+<?php
+    include("header.php");
+?>
 
-    <div class="header">
-        <div class="logo_block">
-            <div class="logo">
-                <a href="index.php" alt="Home">
-                <img src="./images/apple.png" alt="Home" id="logo" href="index.php">
-                </a>
-            </div>
-                <div class="nazwa">
-                    <a class="link" href="index.php" alt="Home">
-                    <h1 class="nazwa">Jabłka in PL</h1>
-                    </a>
+    <div class="main">                    
+        <div class="product_container">
+            <div class="the_product">
+                <h1><?= $products['firma']; echo "&nbsp";  echo $products['model']; echo "&nbsp"; echo $products['memory'];?></h1>
+                <div class="product_image">
+                    <img class="the_product_image" src="<?php echo $products['image']; ?>">
                 </div>
-        </div>  
+            </div>
 
-        <div class="icons">  
-            <a href="wyszukiwanie.php">
-                <img class="icon" src="images/search-svgrepo-com.svg" alt="polubione">
-            </a> 
-            <a href="polubione.php">
-                <img class="icon" src="images/heart-svgrepo-com.svg" alt="polubione">
-            </a>
+            <div class="opis">
+                <span class="pogrubione">Wyświetlacz:</span> <?php echo $products['wyswietlacz']; ?> <br>
+                <span class="pogrubione">Procesor:</span> <?php echo $products['procesor']; ?> <br>
+                <span class="pogrubione">Pamięć wbudowana:</span> <?php echo $products['pamiec_wbudowana']; ?> <br>
+                <span class="pogrubione">Pamięć RAM:</span> <?php echo $products['ram']; ?> <br>
+                <span class="pogrubione">Komunikacja:</span> <?php echo $products['komunikacja']; ?> <br>
 
-            <a href="koszyk.php">
-                <img class="icon" src="images/shop-bag-svgrepo-com.svg" alt="koszyk">
-            </a>
+            </div>
+
+            <div class="price">
+                <p><?= $products['price']; ?> zł</p>
+                <button type="submit" id="">KUPIĆ</button>
+            </div>
+
+
         </div>
 
-        <div class="dropdown">
-                    <button class="dropbtn">
-                        <img id="konto" src="images/account-svgrepo-com.svg" alt="konto">
-                    </button>
-
-                  <div class="dropdown-content">
-                    <?php   
-                    session_start();
-                    if(!isset($_SESSION['user'])){
-                    echo "
-                    <a href='logowanie.php'>Log in</a>
-                    <a href='rejestracja.php'>Sign up</a>";
-                    }
-                    else
-                        
-                        echo "<div class='test'>Witaj: ".$_SESSION['user']." <a href='logout.php'>Exit</a> </div>)";
-                    ?>
-
-                  </div>
-                 
-
-        </div>
-    </div>
-
-
-    <div class="main">
-
-        <div class="container">
-            
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img class="product" src="<?php echo $products['image']; ?>">
-                            <p><?= $products['firma']; echo "&nbsp";  echo $products['model']; echo "&nbsp"; echo $products['memory'];?></p>
-                            <p><?= $products['price']; ?> zł</p>
-                        </div> 
-                    </div>
-        </div>
-            
-    </div>
-
-    <div class="footer">
+        <div class="footer">
         
+        </div>
 
     </div>
-
 </div>
-
-
-
-
-
-
-
-
 
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/jq.js"></script>

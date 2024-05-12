@@ -168,3 +168,23 @@
   .test{
     color: #000000;
   }
+
+
+
+  
+@media(max-width: 500px) {
+    .nazwa{
+        display: none;
+    }
+    .icons{
+        display: none;
+    }
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        justify-self: flex-end;
+        margin-left: auto;
+      }
+}

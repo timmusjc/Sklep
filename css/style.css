@@ -32,13 +32,14 @@ a{
     justify-content: center;
     align-items: center;
     margin-top: 56px;
+    flex: 1;
 }
 
 .container{
     position: relative;
     margin: 10px 0;
     background: rgb(255, 255, 255);
-    width: 70vw;
+    width: 80vw;
     border-radius: 14px;
 }
 .container a{
@@ -93,7 +94,7 @@ a{
 #google_login{
     position: relative;
 }
-.log_page input{
+input{
     position: relative;
     background: #ebddf0;
     color: rgb(0, 0, 0);
@@ -122,7 +123,7 @@ a{
     font-size: 16px;
 }
 
-.log_page button{
+    .log_page button{
     position: relative;
     font-family: "roboto";
     width: 200px;
@@ -142,7 +143,7 @@ a{
 .product{
     position: relative;
     max-width: 250px;
-    max-height: 250px;
+    height: 250px;
     padding: auto;
 }
 
@@ -150,7 +151,7 @@ a{
 .categories{
     position: relative;
     background: rgb(220, 212, 212);
-    width: 70vw;
+    width: 80vw;
     min-height: 300px;
     border-radius: 14px;
     margin: 10px;
@@ -180,4 +181,160 @@ a{
 .footer p{
     color: white;
     padding: 10px;
+}
+
+
+
+.product_container{
+    position: relative;
+    display: flex;
+    width: 95vw;
+    min-height: 100vh;
+    height: fit-content;
+    margin: 20px 0px;
+    border-radius: 14px;
+    background: white;
+}
+
+.the_product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
+}
+
+.product_image{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    width: 500px;
+}
+
+.the_product_image{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+}
+
+.price{
+    
+    color: #d00000;
+    width: fit-content;
+    height: fit-content;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.price p{
+    font-size: 3.125rem;
+}
+
+.price button{
+position: relative;
+
+    font-family: "roboto";
+    font-size: 30px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    border-radius: 7px;
+    background: rgb(255, 208, 0);
+
+    cursor: pointer;
+    color: black;
+}
+.price button:hover{
+    background: rgb(255, 183, 49);
+}
+
+.opis{
+    justify-self: center;
+    margin: 10px 30px;
+    margin-left: auto;
+}
+
+.pogrubione{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.edytowac{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 50px;
+    padding: 0;
+
+}
+
+.przycisk{
+    height: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    font-family: "roboto";
+    font-size: 30px;
+   
+    border: none;
+    border-radius: 7px;
+    background: rgb(0, 145, 255);
+
+    color: black;
+}
+
+
+
+
+#small{
+width: 200px;
+}
+
+
+
+#dodaj_towar{
+    position: relative;
+    font-family: "roboto";
+    font-size: 30px;
+    width: 170px;
+    height: fit-content;
+    border: none;
+    border-radius: 7px;
+    background: rgb(0, 145, 255);
+    cursor: pointer;
+    color: black;
+}
+
+
+.product_container input{
+    position: relative;
+    background: #dbd3d3;
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+
+}
+
+.edit_opis{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: auto;
+}
+
+.edit_opis input::placeholder{
+    color: rgb(0, 0, 0);
+    font-size: 16px;
 }
