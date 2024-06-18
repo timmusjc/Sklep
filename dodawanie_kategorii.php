@@ -25,8 +25,8 @@ include("header.php");
     <div class="product_container">
         <div class="the_product">
                 <div class="product_image">
-                    <form action="add_kategoria.php" method="post">
-                    <input type="text" placeholder="Ścieżka do pliku" name="image"><br>
+                    <form id="plik" action="add_kategoria.php" method="post" enctype="multipart/form-data">
+                    <input type="file" name="image"><br>
                     
 
                     <img src="images/twoj_obraz.png" alt="">
@@ -51,7 +51,18 @@ include("header.php");
     </div>
 
     <div class="footer">
-    
+    <div class="container-1">
+        <div class="row">
+            <div class="col-md-6 ">
+                <p>&copy; 2024 Jabłka in PL by Tymofii Korzh. <br>All copyrights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+               
+            </div>
+        </div>
+    </div>
+
+    </div>
     </div>
 
 </div>

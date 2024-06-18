@@ -16,62 +16,14 @@ $category_id = $_GET["id"];
 </head>
 <body>
 
-<div class="home_page">    
-
-    <div class="header">
-        <div class="logo_block">
-            <div class="logo">
-                <a href="index.php" alt="Home">
-                <img src="./images/apple.png" alt="Home" id="logo" href="index.php">
-                </a>
-            </div>
-                <div class="nazwa">
-                    <a class="link" href="index.php" alt="Home">
-                        <h1 class="nazwa">Jabłka in PL</h1>
-                    </a>
-                </div>
-        </div>  
-
-            <div class="icons">  
-                <a href="wyszukiwanie.php">
-                    <img class="icon" src="images/search-svgrepo-com.svg" alt="polubione">
-                </a> 
-                <a href="polubione.php">
-                    <img class="icon" src="images/heart-svgrepo-com.svg" alt="polubione">
-                </a>
-
-                <a href="koszyk.php">
-                    <img class="icon" src="images/shop-bag-svgrepo-com.svg" alt="koszyk">
-                </a>
-            </div>
-
-            <div class="dropdown">
-                    <button class="dropbtn">
-                        <img id="konto" src="images/account-svgrepo-com.svg" alt="konto">
-                    </button>
-
-                <div class="dropdown-content">
-                    
-
-                    <?php   
-                    session_start();
-                    if(!isset($_SESSION['user'])){
-                    echo "
-                    <a href='logowanie.php'>Log in</a>
-                    <a href='rejestracja.php'>Sign up</a>";
-                    }
-
-                    else
-                        
-                        echo "<div class='test'>Witaj: ".$_SESSION['user']." <a href='logout.php'>Exit</a> </div>)";
-                        
-                    ?>
-
+<div class="home_page"> 
+    <?php   
+    include("header.php");
+    ?>
 
                     
-                </div>
-            </div>  
-    </div>
+                
+        
 
 
     <div class="main">
@@ -85,15 +37,23 @@ $category_id = $_GET["id"];
                             // $mysqli->close();
                             $result->fetch_assoc();
                             foreach($result as $data): ?>
-                                <div class="col-sm-4">
+                                <div class="col-md-3">
+                                    <div class="row">
                                     <a href="product.php?products_id=<?php echo $data['products_id']; ?>">
-                                     <img class="product" src="<?php echo $data['image']; ?>">        
-                                    <p><?= $data['firma']; echo "&nbsp";  echo $data['model']; echo "&nbsp"; echo $data['memory'];?></p>
-                                    <p><?= $data['price']; ?> zł</p>
+                                        <div class="powloka">
+                                     <img class="product" src="<?php echo $data['image']; ?>">      
+                                     </div>  
+                                     <div class="product">
+                                    <h5><?= $data['firma']; echo "&nbsp";  echo $data['model']; echo "&nbsp"; echo $data['memory'];?></h5>
+                                    <h5 id="cena"><?= $data['price']; ?> zł</h5>
                                     </a>
+                                    <form method="post" action="add_to_koszyk.php?id=<?php echo $data['products_id']; ?>">
+                            <button class="do_koszyka" type="submit">Dodaj do koszyka</button>
+                        </form>
 
                                 </div>
-
+                                </div>
+                                </div>
                             <?php endforeach; ?>
             </div>
             
@@ -103,7 +63,18 @@ $category_id = $_GET["id"];
 
     <div class="footer">
         
+    <div class="container-1">
+        <div class="row">
+            <div class="col-md-6 ">
+                <p>&copy; 2024 Jabłka in PL by Tymofii Korzh. <br>All copyrights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+               
+            </div>
+        </div>
+    </div>
 
+    </div>
     </div>
 
 </div>

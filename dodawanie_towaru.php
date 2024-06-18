@@ -34,11 +34,11 @@ $mysqli->close();
             <div class="the_product">
                 
                 <div class="product_image">
-                    <form action="add_towar.php" method="post">
+                    <form id="plik" action="add_towar.php" method="post" enctype="multipart/form-data">
                     <input type="text" placeholder="Firma" name="firma">
                     <input type="text" placeholder="Model" name="model">
                     
-                        <input type="text" placeholder="Ścieżka do pliku" name="image"><br>
+                        <input id="plik"  type="file" name="image"><br>
                     
 
                         <img src="images/twoj_obraz.png" alt="">
@@ -62,7 +62,7 @@ $mysqli->close();
 
                         <?php endforeach; ?>
                     </select>
-
+                            Nie masz właściwej kategorii? <a href="dodawanie_kategorii.php">Dodaj ją tutaj!</a> 
                 </div>
                 
                 
@@ -78,11 +78,23 @@ $mysqli->close();
         </div>
 
         <div class="footer">
-        
+        <div class="container-1">
+        <div class="row">
+            <div class="col-md-6 ">
+                <p>&copy; 2024 Jabłka in PL by Tymofii Korzh. <br>All copyrights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+               
+            </div>
+        </div>
+    </div>
+
+    </div>
         </div>
 
     </div>
 </div>
+
 
 <script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/jq.js"></script>

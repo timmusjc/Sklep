@@ -13,19 +13,14 @@
         </div>  
 
         <div class="icons">  
-            <a href="wyszukiwanie.php">
-                <img class="icon" src="images/search-svgrepo-com.svg" alt="polubione">
-            </a> 
-            <a href="polubione.php">
-                <img class="icon" src="images/heart-svgrepo-com.svg" alt="polubione">
-            </a>
-
+            
+            </div>
+            
+            
             <a href="koszyk.php">
                 <img class="icon" src="images/shop-bag-svgrepo-com.svg" alt="koszyk">
             </a>
-        </div>
-
-        <div class="dropdown">
+            <div class="dropdown">
                     <button class="dropbtn">
                         <img id="konto" src="images/account-svgrepo-com.svg" alt="konto">
                     </button>
@@ -41,7 +36,9 @@
                         elseif(isset($_SESSION['pu']) && ($_SESSION['user']) && ($_SESSION['pu']==0)){
                             echo "<div class='test'>Witaj: ".$_SESSION['user']." <a href='logout.php'>Exit</a> </div>";
                             }else{
-                                echo "<div class='test'>JA ADMINNN  <a href='logout.php'>Exit</a> </div>";
+                                echo "<div class='test'>Witaj: ".$_SESSION['user']." <a href='logout.php'>Exit</a> </div>";
+                                echo "<div class='test'><a href='admin.php'>Panel admina</a> </div>";
+
                             };
                         
                         ?>

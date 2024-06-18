@@ -41,14 +41,27 @@ require_once"functions.php";
 
             <div class="price">
                 <p><?= $products['price']; ?> zł</p>
-                <button type="submit" id="">KUPIĆ</button>
+                <form action="add_to_koszyk.php?id=<?php echo $products['products_id']; ?>" method="post">
+                <button type="submit" id="">Dodaj do koszyka</button>
+                </form>
             </div>
 
 
         </div>
 
         <div class="footer">
-        
+        <div class="container-1">
+        <div class="row">
+            <div class="col-md-6 ">
+                <p>&copy; 2024 Jabłka in PL by Tymofii Korzh. <br>All copyrights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+               
+            </div>
+        </div>
+    </div>
+
+    </div>
         </div>
 
     </div>
